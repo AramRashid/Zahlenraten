@@ -1,0 +1,36 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 1em;
+    margin: auto;
+}
+
+.game-header {
+    margin-inline: auto;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.header-splitter {
+    width: 50%;
+    padding: 0.5em;
+}
+
+.form-full {
+    margin-inline: auto;
+    width: 95%;
+}
+
+.form-button {
+    width: 100%;
+    margin-top: 1em;
+}
+
+.btn-center {
+    width: 15em;
+    margin-inline: auto;
+}
