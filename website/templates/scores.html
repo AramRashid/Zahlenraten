@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+{% block title %}
+    Bestenliste
+{% endblock %}
+{% block content %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Spieler</th>
+        <th scope="col">Punkte</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for score in scores %}
+      <tr>
+        <td>{{score.name}}</td>
+        <td>{{score.points}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -5,7 +5,11 @@
 {% block content %}
 <div class="game-header">
     <div class="header-splitter">
-        <span>Versuche: </span>
+        {% if counter %}
+        <span>Versuche: {{counter}}</span>
+        {% else %}
+        <span>Versuche: 0</span>
+        {% endif %}
     </div>
     <div class="header-splitter">
         <span>{{status}}</span>

@@ -8,19 +8,21 @@ def show_gamegame():
     if request.method == 'POST':
         guess = request.form.get('guess')
         status = get_status(int(guess))
-
-        return render_template('game.html', status=status)
+        guess_count = int(session['noGuesses'])
+        guess_count = guess_count + 1
+        session['noGuesses'] = guess_count
+        return render_template('game.html', status=status, counter=guess_count)
     return render_template('game.html')
 
 def get_status(guess):
     if 'rndNumber' in session:
         if int(session['rndNumber']) < guess:
-            return 'tiefer'
+            return 'Tiefer'
 
         if int(session['rndNumber']) > guess:
-            return 'höher'
+            return 'Höher'
 
-        return 'gewonnen'
+        return 'Gewonnen'
     
     return ''
 

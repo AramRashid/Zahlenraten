@@ -7,4 +7,5 @@ views = Blueprint('views', __name__)
 def home():
     rndNumber = randrange(0, 100)
     session['rndNumber'] = rndNumber
+    session['noGuesses'] = 0
     return render_template('main.html')
