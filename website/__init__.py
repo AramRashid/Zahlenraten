@@ -16,6 +16,8 @@ def create_app():
     app.register_blueprint(scores, url_prefix='/')
     from .game import game
     app.register_blueprint(game, url_prefix='/')
+    from .win import win
+    app.register_blueprint(win, url_prefix='/')
     return app
 
 

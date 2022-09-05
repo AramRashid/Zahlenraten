@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, session
+from flask import Blueprint, render_template, request, session, redirect, url_for
 
 game = Blueprint('game', __name__)
 
@@ -6,12 +6,16 @@ game = Blueprint('game', __name__)
 def show_gamegame():
     
     if request.method == 'POST':
-        guess = request.form.get('guess')
-        status = get_status(int(guess))
-        guess_count = int(session['noGuesses'])
-        guess_count = guess_count + 1
-        session['noGuesses'] = guess_count
-        return render_template('game.html', status=status, counter=guess_count)
+        if 'guess' in request.form:
+            guess = request.form.get('guess')
+            status = get_status(int(guess))
+            guess_count = int(session['noGuesses'])
+            guess_count = guess_count + 1
+            session['noGuesses'] = guess_count
+            if status == 'Gewonnen':
+                return redirect(url_for('win.show_winner'))
+            else:       
+                return render_template('game.html', status=status, counter=guess_count)
     return render_template('game.html')
 
 def get_status(guess):

@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+{% block title %}
+    Gewonnen
+{% endblock %}
+{% block content %}
+<div class="input-group mb-3">
+    <form method="POST" class="form-full">
+        <input type="text" 
+               class="form-control" 
+               aria-describedby="button-addon2"
+               id="nameInput"
+               name="name">
+        <button class="btn btn-outline-secondary form-button" type="submit">Highscore speichern</button>
+    </form>  
+</div>
+{% endblock %}
