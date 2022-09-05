@@ -32,6 +32,20 @@
         </div>
         <div class="content">
             {% block content%}
+                <div class="info-container">
+                    <span>
+                        Willkommen beim Spiel "Zahlenraten"
+                    </span>
+                    <span>
+                        Sobald das Spiel gestartet wurde, wird eine Zahl zwischen 0 und 100 ausgewürfelt.
+                    </span>
+                    <span>
+                        Du musst diese Zahl erraten. Jeder Versuch kostet dich 10 deiner 100 Punkte.
+                    </span>
+                    <span>
+                        Viel Glück :)
+                    </span>
+                </div>
                 <button type="submit" class="btn btn-primary btn-center" onclick="window.location.href='/game';" aria-label="Spiel starten">Spiel starten</button> 
             {% endblock %}
         </div>

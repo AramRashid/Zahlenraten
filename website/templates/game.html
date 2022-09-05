@@ -16,14 +16,22 @@
     </div>
 </div>
 <div class="input-group mb-3">
+    <div class="points-container">
+        {% if points %}
+        <span>Punkte: {{points}}</span>
+        {% else %}
+        <span>Punkte: 100</span>
+        {% endif %}
+    </div>
     <form method="POST" class="form-full">
         <input type="number" 
                class="form-control" 
                aria-describedby="button-addon2"
                id="guessInput"
                name="guess"
-               autocomplete="off">
+               autocomplete="off"
+               min="0">
         <button class="btn btn-outline-secondary form-button" type="submit">Tipp abgeben</button>
-    </form>  
+    </form>
 </div>
 {% endblock %}

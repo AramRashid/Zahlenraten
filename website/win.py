@@ -9,7 +9,7 @@ def show_winner():
     if request.method == 'POST':
         if 'name' in request.form:
             name = request.form.get('name')
-            points = calc_points()
+            points = int(session['points'])
             new_score = Score(name=name, points=points)
             db.session.add(new_score)
             db.session.commit()
@@ -17,11 +17,3 @@ def show_winner():
             return render_template('scores.html', scores=scores)
 
     return render_template('win.html')
-
-def calc_points():
-    guesses = int(session['noGuesses'])
-    points = 100 - (guesses * 10)
-    if points < 0:
-        points = 0
-
-    return points
