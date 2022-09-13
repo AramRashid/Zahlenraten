@@ -1,7 +1,18 @@
+:root {
+    --f-size-base: 18px;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 .main-container {
     display: flex;
-    flex-direction: wrap;
+    flex-direction: row;
     justify-content: space-between;
+    height: 100%;
 }
 
 .info-container {
@@ -13,6 +24,7 @@
     margin-top: 3em;
     margin-bottom: 3em;
     text-align: center;
+    font-size: var(--f-size-base);
 }
 
 .content {
@@ -22,14 +34,15 @@
     padding: 1em;
     margin-inline: auto;
 }
+
 .ad-container {
     display: flex;
     flex-direction: column;
-    width: 18%;
-    height: 94vh;
+    width: 15%;
     background-color: lightgray;
     border-right: solid thin black;
     border-left: solid thin black;
+    height: 100%;
 }
 
 .ad-img {
@@ -42,16 +55,18 @@
 
 .game-header {
     margin-inline: auto;
-    width: 95%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 1em;
+    margin-top: 3em;
+    font-size: var(--f-size-base);
 }
 
 .points-container {
     margin-inline: auto;
-    width: 95%;
+    width: 100%;
     padding: 0.5em;
     margin-bottom: 1em;
 }
@@ -62,8 +77,8 @@
 }
 
 .form-full {
-    margin-inline: auto;
     width: 95%;
+    margin-inline: auto;   
 }
 
 .form-button {
@@ -74,4 +89,15 @@
 .btn-center {
     width: 15em;
     margin-inline: auto;
+}
+
+.error-container {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    font-size: var(--f-size-base);
+    background-color: rgba(255, 0, 0, 0.205);
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border-left: thick solid red;
 }

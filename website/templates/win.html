@@ -4,14 +4,21 @@
 {% endblock %}
 {% block content %}
 <div class="input-group mb-3">
+    {% if error %}
+    <div class="error-container">
+        <span>Fehler beim Speichern des Highscores</span>
+    </div>
+    {% endif %}
     <form method="POST" class="form-full">
         <input type="text" 
                class="form-control" 
                aria-describedby="button-addon2"
                id="nameInput"
                name="name"
-               autocomplete="off">
-        <button class="btn btn-outline-secondary form-button" type="submit">Highscore speichern</button>
+               autocomplete="off"
+               aria-label="Namenseingabe"
+               required>
+        <button class="btn btn-outline-secondary form-button" type="submit"  aria-label="Eintrag abschicken">Highscore speichern</button>
     </form>  
 </div>
 {% endblock %}

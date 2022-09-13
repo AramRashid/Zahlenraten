@@ -6,21 +6,21 @@
 <div class="game-header">
     <div class="header-splitter">
         {% if counter %}
-        <span>Versuche: {{counter}}</span>
+        <span aria-label="Versuche">Versuche: {{counter}}</span>
         {% else %}
-        <span>Versuche: 0</span>
+        <span aria-label="Versuche">Versuche: 0</span>
         {% endif %}
     </div>
     <div class="header-splitter">
-        <span>{{status}}</span>
+        <span  aria-label="Tipp">{{status}}</span>
     </div>
 </div>
 <div class="input-group mb-3">
     <div class="points-container">
         {% if points %}
-        <span>Punkte: {{points}}</span>
+        <span  aria-label="Punkte">Punkte: {{points}}</span>
         {% else %}
-        <span>Punkte: 100</span>
+        <span  aria-label="Punkte">Punkte: 100</span>
         {% endif %}
     </div>
     <form method="POST" class="form-full">
@@ -30,8 +30,10 @@
                id="guessInput"
                name="guess"
                autocomplete="off"
-               min="0">
-        <button class="btn btn-outline-secondary form-button" type="submit">Tipp abgeben</button>
+               min="0"
+               aria-label="Tippeingabe"
+               required>
+        <button class="btn btn-outline-secondary form-button" type="submit"  aria-label="Tipp abschicken">Tipp abgeben</button>
     </form>
 </div>
 {% endblock %}

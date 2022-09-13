@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, request, session
-from . import db
-from .models import Score
+from .database.ScoreManager import ScoreManager
 
 win = Blueprint('win', __name__)
 
@@ -10,10 +9,14 @@ def show_winner():
         if 'name' in request.form:
             name = request.form.get('name')
             points = int(session['points'])
-            new_score = Score(name=name, points=points)
-            db.session.add(new_score)
-            db.session.commit()
-            scores = Score.query.all();
+            scoreMgr = ScoreManager()
+
+            try:
+                scoreMgr.InsertScore(name, points)
+                scores = scoreMgr.GetScores()
+            except:
+                return render_template('scores.html', error=True)
+           
             return render_template('scores.html', scores=scores)
 
     return render_template('win.html')

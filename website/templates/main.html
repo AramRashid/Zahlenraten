@@ -13,48 +13,48 @@
         {% endblock %}
     </title>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" id="scoreboard" href="/" aria-label="Home">Home</a>
-                <a class="nav-item nav-link" id="scoreboard" href="/scoreboard" aria-label="Bestenliste">Bestenliste</a>
+<body class="body">
+    <div class="page-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" id="scoreboard" href="/" aria-label="Home">Home</a>
+                    <a class="nav-item nav-link" id="scoreboard" href="/scoreboard" aria-label="Bestenliste">Bestenliste</a>
+                </div>
+            </div>
+        </nav>
+    
+        <div class="main-container">
+            <div class="ad-container">
+                <img class="ad-img" src="../static/img/raid_ad.png" aria-label="Werbung Schlachtzug Schattenlegenden" onclick="window.open('https://www.youtube.com/watch?v=m37G-06ibAU', '_blank')" >
+            </div>
+            <div class="content">
+                {% block content%}
+                    <div class="info-container">
+                        <span>
+                            Willkommen beim Spiel "Zahlenraten"
+                        </span>
+                        <span>
+                            Sobald das Spiel gestartet wurde, wird eine Zahl zwischen 0 und 100 ausgewürfelt.
+                        </span>
+                        <span>
+                            Du musst diese Zahl erraten. Jeder Versuch kostet dich 10 deiner 100 Punkte.
+                        </span>
+                        <span>
+                            Viel Glück :)
+                        </span>
+                    </div>
+                    <button type="submit" class="btn btn-secondary btn-center" onclick="window.location.href='/game';" aria-label="Spiel starten">Spiel starten</button> 
+                {% endblock %}
+            </div>
+            <div class="ad-container">
+                <img class="ad-img" src="../static/img/sued_vpn.png" aria-label="Werbung Süd VPN" onclick="window.open('https://www.youtube.com/watch?v=xvFZjo5PgG0', '_blank')">
             </div>
         </div>
-    </nav>
-
-    <div class="main-container">
-        <div class="ad-container">
-            <img class="ad-img" src="../static/img/raid_ad.png" aria-label="Werbung Schlachtzug Schattenlegenden" onclick="window.open('https://www.youtube.com/watch?v=m37G-06ibAU', '_blank')" >
-        </div>
-        <div class="content">
-            {% block content%}
-                <div class="info-container">
-                    <span>
-                        Willkommen beim Spiel "Zahlenraten"
-                    </span>
-                    <span>
-                        Sobald das Spiel gestartet wurde, wird eine Zahl zwischen 0 und 100 ausgewürfelt.
-                    </span>
-                    <span>
-                        Du musst diese Zahl erraten. Jeder Versuch kostet dich 10 deiner 100 Punkte.
-                    </span>
-                    <span>
-                        Viel Glück :)
-                    </span>
-                </div>
-                <button type="submit" class="btn btn-primary btn-center" onclick="window.location.href='/game';" aria-label="Spiel starten">Spiel starten</button> 
-            {% endblock %}
-        </div>
-        <div class="ad-container">
-            <img class="ad-img" src="../static/img/sued_vpn.png" aria-label="Werbung" onclick="window.open('https://www.youtube.com/watch?v=xvFZjo5PgG0', '_blank')">
-        </div>
     </div>
-    
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>

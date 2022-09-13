@@ -1,9 +1,9 @@
 from random import randrange
 from flask import Blueprint, render_template, session
 
-views = Blueprint('views', __name__)
+layout = Blueprint('views', __name__)
 
-@views.route('/', methods=['GET', 'POST'])
+@layout.route('/', methods=['GET', 'POST'])
 def home():
     rndNumber = randrange(0, 100)
     session['rndNumber'] = rndNumber

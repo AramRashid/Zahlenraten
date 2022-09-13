@@ -10,8 +10,8 @@ def create_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
 
-    from .views import views
-    app.register_blueprint(views, url_prefix='/')
+    from .layout import layout
+    app.register_blueprint(layout, url_prefix='/')
     from .scores import scores
     app.register_blueprint(scores, url_prefix='/')
     from .game import game
